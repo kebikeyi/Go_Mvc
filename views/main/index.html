@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>机动车检测管理系统</title>
+    <!-- 线上环境 -->
+    <script src="/static/js/jquery-1.7.1.min.js"></script>
+    <script src="/static/js/jquery.form.js"></script>
+    <link rel="stylesheet" href="/static/css/component-min.css">
+    <link rel="stylesheet" href="/static/js/jbox/jbox.css">
+
+</head>
+<body class="cp-bodybox">
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger disable-del txtCenter" id="tipLowIEVer">
+        <h4>系统检测到您使用的浏览器版本过低，为达到更好的体验效果请升级您的浏览器，我们为您推荐：</h4>
+        <p>
+            <a href="https://www.google.com.hk/chrome/" target="_blank">Chrome浏览器</a>
+            <a href="http://www.firefox.com.cn/download/" target="_blank">Firefox浏览器</a>
+            <a href="http://www.maxthon.cn/" target="_blank">遨游浏览器</a>
+            <a href="http://se.360.cn/" target="_blank">360浏览器</a>
+            <a href="http://www.liebao.cn/" target="_blank">猎豹浏览器</a>
+        </p>
+    </div>
+    <![endif]-->
+    <div class="header">
+        <div class="inner clearfix">
+            <div class="fl">
+                <a href="http://mp.wxfenxiao.com/" class="header-logo"><img src="/static/img/logo.jpg"></a>
+            </div>
+            <!-- end logo -->
+            <div class="header-nav fl">
+                <ul class="header-nav-list clearfix">
+
+                    <li class="fl active"><a href="http://mp.wxfenxiao.com/Shop/home">首页</a></li>
+                </ul>
+            </div>
+            <!-- end header-nav -->
+            <div class="fr">
+                <ul class="header-ctrl clearfix">
+                    <li class="header-ctrl-item fl">
+                        <a href="javascript:;" class="header-ctrl-item-parent">
+                            <i class="gicon-user white"></i>
+                            <i class="gicon-user"></i>
+                            账户
+                        </a>
+                        <ul class="header-ctrl-item-children">
+                            <li><a href="http://mp.wxfenxiao.com/System/updateLog" target="_blank">更新日志</a></li>
+                            <li><a href="http://www.wifenxiao.com/Index/help_list/lm/help.html" target="_blank">帮助中心</a></li>
+                            <li><a href="http://mp.wxfenxiao.com/System/shopInfo">设置</a></li>
+                            <li><a href="http://mp.wxfenxiao.com/System/updatepwd">修改密码</a></li>
+                            <li><a href="http://mp.wxfenxiao.com/Public/logout">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- end list -->
+            <span class="account_inbox_switch fr"><a href="http://mp.wxfenxiao.com/System/notice_list" class="header_mail"></a></span>
+            <span class="header-welcome fr"><a href="javasecript:;" class="tips" data-trigger="hover" data-placement="top" data-content="&lt;strong&gt;版本：&lt;/strong&gt;&lt;font style=&quot;color:red&quot;&gt;免费版&lt;/font&gt;">13932172487，欢迎回来</a></span>
+            <!-- end header-welcome -->
+        </div>
+    </div>
+    <!-- end header -->
+    <div class="container">
+        <div class="inner clearfix">
+            <div class="content-left fl">
+                <dl class="left-menu shop_2 sub_commodity">
+                    <dt>
+                        <i class="icon-menu commodity"></i>
+                        <span id="shop_2" data-id="2">检测管理</span>
+                    </dt>
+                    <dd class="subshop_0 ">
+                        <a href="http://mp.wxfenxiao.com/Item/add">车辆登录</a>
+                    </dd>
+                    <dd class="subshop_6 ">
+                        <a href="http://mp.wxfenxiao.com/Item/lists/item_status/onsale">外观检验</a>
+                    </dd>
+                    <dd class="subshop_7 ">
+                        <a href="http://mp.wxfenxiao.com/Item/lists/item_status/onsku">上线检测</a>
+                        <i class="icon_hot"></i>
+                    </dd>
+                    <dd class="subshop_8 ">
+                        <a href="http://mp.wxfenxiao.com/Item/lists/item_status/outstock">车辆复检</a>
+                    </dd>
+                    <dd class="subshop_9 ">
+                        <a href="http://mp.wxfenxiao.com/Item/lists/item_status/warn">检验结果</a>
+                    </dd>
+                    <dd class="subshop_12 ">
+                        <a href="http://mp.wxfenxiao.com/Item/category_list">检验退办</a>
+                    </dd>
+                </dl><dl class="left-menu shop_3 sub_tags">
+                    <dt>
+                        <i class="icon-menu tags"></i>
+                        <span id="shop_3" data-id="3">查询管理</span>
+                    </dt>
+                    <dd class="subshop_0 active">
+                        <a href="./商品分组列表 - 微分销_files/商品分组列表 - 微分销.html">登录查询</a>
+                    </dd>
+                    <dd class="subshop_5 ">
+                        <a href="http://mp.wxfenxiao.com/Item/list_class">检验查询</a>
+                    </dd>
+                </dl><dl class="left-menu shop_4 sub_download">
+                    <dt>
+                        <i class="icon-menu download"></i>
+                        <span id="shop_4" data-id="4">设置中心</span>
+                    </dt>
+                    <dd class="subshop_0 ">
+                        <a href="http://mp.wxfenxiao.com/Item/import">企业信息</a>
+                    </dd>
+                    <dd class="subshop_2 ">
+                        <a href="http://mp.wxfenxiao.com/Item/import_fromfiles">参数设置</a>
+                    </dd>
+                    <dd class="subshop_3 ">
+                        <a href="http://mp.wxfenxiao.com/Item/import_qfx">检验项目</a>
+                    </dd>
+                    <dd class="subshop_6 ">
+                        <a href="http://mp.wxfenxiao.com/Item/item_import">检测线设置</a>
+                    </dd>
+                </dl>
+            </div>
+            <!-- end content-left -->
+            <div class="content-right fl">
+
+                <h1 class="content-right-title">车辆登录列表<a class="gicon-info-sign gicon_linkother" href="javascript:void(0);" target="_blank"></a></h1>
+
+
+                <form action="./商品分组列表 - 微分销_files/商品分组列表 - 微分销.html" method="post">
+                    <div class="clearfix">
+                        <a href="http://mp.wxfenxiao.com/Item/add_group" class="btn btn-success fl">新增车辆</a>
+                        <div class="tables-searchbox fr">
+                            <input type="text" placeholder="车牌号码" class="input" name="title" value="">
+                            <button class="btn"><i class="gicon-search"></i>查询</button>
+                        </div>
+                    </div>
+                    <table class="wxtables mgt15">
+                        <colgroup>
+                            <col width="2%">
+                            <col width="22%">
+                            <col width="22%">
+                            <col width="24%">
+                            <col width="30%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <td><i class="icon_check"></i></td>
+                                <td>分组名称</td>
+                                <td>商品数量</td>
+                                <td>创建时间</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="5">暂无信息</td></tr>
+                        </tbody>
+                    </table>
+                    <!-- end wxtables -->
+                    <div class="tables-btmctrl clearfix">
+                        <div class="fl">
+                        </div>
+                        <div class="fr">
+                            <div class="paginate">
+                            </div>
+                            <!-- end paginate -->
+                        </div>
+                    </div>
+                    <!-- end tables-btmctrl -->
+                </form>
+
+            </div>
+            <!-- end content-right -->
+        </div>
+    </div>
+    <!-- end container -->
+    <!--gonggao-->
+    <div class="footer">© 2015 高普汽车研究所 , Inc. All rights reserved.</div>
+    <!-- end footer -->
+    <a href="http://mp.wxfenxiao.com/Item/list_group#" id="j-gotop" class="gotop" title="回到顶部" style="left: 1285.5px;"></a>
+    <!-- end gotop -->
+    <script type="text/j-template" id="tpl_tooltips">
+        <div class="tooltips" style="display:none;">
+            <span class="tooltips-arrow tooltips-arrow-<%= placement %>"><em>◆</em><i>◆</i></span>
+            <%= content %>
+        </div>
+    </script>
+    <!-- end tooltips -->
+    <script type="text/j-template" id="tpl_hint">
+        <div class="hint hint-<%= type %>"><%= content %></div>
+    </script>
+    <!-- end hint -->
+    <script type="text/j-template" id="tpl_jbox_simple">
+        <div class="mgt30"><%= content %></div>
+    </script>
+    <!-- end tpl_jbox_simple -->
+    <script type="text/j-template" id="tpl_qrcode">
+        <div id="qrcode">
+            <img src="<%= src %>">
+            <a href="javascript:;" class="qrcode-btn j-closeQrcode"><i class="gicon-remove white"></i></a>
+        </div>
+    </script>
+    <!-- end qrcode -->
+    <script type="text/j-template" id="tpl_verify_set">
+
+        <div class="tabs clearfix mgt15" id="verify-set-tabs">
+            <a href="javascript:;" class="tabs_a fl active">店铺信息设置</a>
+            <a href="javascript:;" class="tabs_a fl">微信设置</a>
+            <a href="javascript:;" class="tabs_a fl">提成设置</a>
+        </div>
+        <form action="" method="post" id='form-set'>
+            <!-- 店铺信息 -->
+            <div class="panel-single panel-single-light mgt20 verify-set-div ">
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>店铺名称：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="title" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>联系人：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="contact_name" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>联系电话：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="contact_phone" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name">店铺简介：</label>
+                    <div class="form-controls">
+                        <textarea class="textarea" name="description"></textarea>
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 微信 -->
+            <div class="panel-single panel-single-light mgt20 verify-set-div hide">
+                <div class="alert alert-info">开通微信营销需要绑定微信公众帐号，不知道怎么绑定请参考 <a href="/PubMarketing/setting_guide" target="_blank" class="a_hover">开通指引</a></div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>名称：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="pub_name" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>原始ID：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="source_id" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>微信号：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input" name="pub_account" value="">
+                        <span class="fi-help-text"></span>
+                    </div>
+                </div>
+                <div class="formitems" style="margin-top:30px;">
+                    <label class="fi-name">回调URL：</label>
+                    <div class="form-controls pdt5">
+                        <div class="fl" style="width:355px;">http://m.wxfenxiao.com/Wxapi/index.html?id=2010392</div>
+                        <a href="javascript:;" class="btn btn-small j-copy" data-copy="http://m.wxfenxiao.com/Wxapi/index.html?id=2010392">复制</a>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name">Token：</label>
+                    <div class="form-controls pdt5">
+                        <div class="fl" style="width:355px;">e916345bae6d6717d68d027014aee709</div>
+                        <a href="javascript:;" class="btn btn-small j-copy" data-copy="e916345bae6d6717d68d027014aee709">复制</a>
+                    </div>
+                </div>
+                <div class="formitems mgt5">
+                    <label class="fi-name"><span class="colorRed">*</span>AppId：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input xlarge" value="" name="app_id">
+                        <span class="fi-help-text"><a href="https://mp.weixin.qq.com/" target="_blank">点击获取</a>(开发者中心)</span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name"><span class="colorRed">*</span>Secret：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input xlarge" name="app_secret" value="">
+                        <span class="fi-help-text"><a href="https://mp.weixin.qq.com/" target="_blank">点击获取</a>(开发者中心)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 提成 -->
+            <div class="panel-single panel-single-light mgt20 verify-set-div hide">
+                <div class="formitems">
+                    <label class="fi-name" style="width: 121px;"><span class="colorRed">*</span>直属上级提成比例：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input mini j-pid" name="directly_online_ratio" value="0">
+                        <span class="fi-help-text">购买者直属上级会员的提成比例</span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name" style="width: 121px;"><span class="colorRed">*</span>上级会员提成比例：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input mini j-pid" name="superior_online_ratio" value="0">
+                        <span class="fi-help-text">购买者直属上级会员的上级会员提成比例</span>
+                    </div>
+                </div>
+                <div class="formitems">
+                    <label class="fi-name" style="width: 121px;"><span class="colorRed">*</span>上级的上级会员提成比例：</label>
+                    <div class="form-controls">
+                        <input type="text" class="input mini j-pid" name="three_online_ratio" value="0">
+                        <span class="fi-help-text">购买者直属上级会员上级的上级提成比例</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-single panel-single-light mgt20 txtCenter">
+                <a href="javascript:;" class="btn" id='verify-set-prev'>上一步</a>
+                <a href="javascript:;" class="btn btn-primary" id='verify-set-next'>下一步</a>
+                <a href="javascript:;" class="btn btn-primary hide" id='verify-set-save'>保存</a>
+            </div>
+        </form>
+    </script>
+
+    <!--end front template  -->
+    <script src="/static/js/jbox/jbox.min.js"></script>
+    <script src="/static/js/jquery.zclip-min.js"></script>
+    <!-- 线上环境 -->
+    <script src="/static/js/component-min.js"></script>
+    <script src="/static/js/scroll.js"></script>
+    <!--[if lt IE 10]>
+    <script src="/static/js/jquery.placeholder-min.js"></script>
+    <script>
+        $(function(){
+            //修复IE下的placeholder
+            $('.input,.textarea').placeholder();
+        });
+    </script>
+    <![endif]-->
+
+    <script src="/static/js/zclip-min.js"></script>
+    <script src="/static/js/list_group.js"></script>
+
+    <script>
+        $(function () {
+            $(".j-copy").zclip({
+                path: '/static/js/zclip/ZeroClipboard.swf',
+                copy: function () {
+                    return $(this).data('copy');
+                },
+                afterCopy: function () {
+                    HYD.hint("success", "内容已成功复制到您的剪贴板中");
+                }
+            });
+            $(".btn-notice").click(function () {
+                // $.post('/System/readAllNotice',{},function(){
+                //     window.location.reload();
+                // })
+                $.ajax({
+                    url: '/System/readAllNotice',
+                    type: 'POST',
+                    success: function (data) {
+                        if (data.status == 1) {
+                            window.location.reload();
+                        } else {
+                            HYD.hint("danger", data.msg);
+                        }
+
+                    }
+                })
+            });
+
+
+            ; (function () {
+                // 首页竖线到底
+                var height1 = $(".content-right").height();
+                var height2 = $(".content-left").height();
+                if (parseInt(height1) < parseInt(height2)) {
+                    $(".content-right").css({ 'min-height': height2 });
+                };
+
+            })();
+
+        });
+    </script>
+    <!-- end session hint -->
+    <script>
+        $(function () {
+            setTimeout(gggoup(), 5000);
+            $('.gound_close').click(function () {
+                $('#gonggao').animate({ bottom: "-270px" }, 1000);
+            });
+        });
+        function gggoup() {
+            $('#gonggao').animate({ bottom: "3px" }, 1000);
+        };
+    </script>
+
+</body>
+</html>

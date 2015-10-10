@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <meta charset="UTF-8">
+    <title>机动车检测管理系统-V0.1</title>
+    <script src="/js/jquery-1.7.1.min.js"></script>
+    <script src="/js/jquery.form.js"></script>
+    <!-- Tooltip classes -->
+    <link rel="stylesheet" href="/js/poshytip-1.2/src/tip-yellow/tip-yellow.css" type="text/css" /> 
+    <link rel="stylesheet" href="/js/poshytip-1.2/src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+
+    <!-- jQuery and the Poshy Tip plugin files -->
+    <script type="text/javascript" src="/js/jquery.poshytip.js"></script>
+    <link rel="stylesheet" href="/js/cxcdialog/skin.css" type="text/css" />
+    <script type="text/javascript" src="/js/cxcdialog/Cxc-Dialog.js"></script>
+
+    <link href="/css/component-min.css" rel="stylesheet">
+    <link href="/css/jbox-min.css" rel="stylesheet">
+    <link href="/css/common_login_reg.css" rel="stylesheet">
+    
+</head>
+<body>
+<form id="form1" action="/login" method="post">
+
+    <div class="login">
+        <a class="logo" href="http://mp.qichevm.com/"></a>
+        <div class="login-inner">
+            <h1 class="login-title" id="sysname">机动车检测管理系统</h1>
+            <div class="login-item mgb20">
+                <input tabindex="1" class="clearError" name="uname" id="ipt_account" type="text" title="请输入手机号码" placeholder="请输入手机号码" value="">
+                <a class="clearIpt j-clearIpt" href="javascript:;">
+                    <i class="gicon-remove"></i>
+                </a>
+            </div>
+            <div class="login-item mgb20">
+                <input tabindex="2" class="clearError" id="ipt_pwd" name="pwd" type="password" title="请输入登录密码" placeholder="请输入密码" value="">
+                <a class="clearIpt j-clearIpt" href="javascript:;">
+                    <i class="gicon-remove"></i>
+                </a>
+            </div>
+            <div class="checkbox-group clearfix mgb20">
+                <label class="fl">
+                    <input id="rd_remember"
+                           type="checkbox" checked="">记住密码
+                </label>
+            </div>
+            <div>
+                <a tabindex="4" class="login-btn" id="btn_login"
+                   href="javascript:;">登录</a>
+            </div>
+            <div class="login-locationnow" style="display:none;">
+                <a href="/register">没有账号？立即注册</a>
+            </div>
+        </div>
+    </div><!-- end login -->
+
+    <script src="/static/js/jquery.jbox-min.js"></script>
+
+    <script src="/static/js/component-min.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="/static/js/jquery.placeholder-min.js"></script>
+        <script>
+        $(function(){
+            //修复IE下的placeholder
+            $('input').placeholder();
+        });
+        </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        $(function () {
+            $('#ipt_account').poshytip({
+                className: 'tip-yellowsimple',
+                showOn: 'focus',
+                alignTo: 'target',
+                alignX: 'right',
+                alignY: 'center',
+                offsetX: 5,
+                showTimeout: 100
+            });
+            $('#ipt_pwd').poshytip({
+                className: 'tip-yellowsimple',
+                showOn: 'focus',
+                alignTo: 'target',
+                alignX: 'right',
+                alignY: 'center',
+                offsetX: 5,
+                showTimeout: 100
+            });
+
+            $('#btn_login').poshytip({
+                content: 'Hey, there! This is a tooltip.',
+                showOn: 'none',
+                alignTo: 'target',
+                alignX: 'center',
+                offsetX: 0,
+                offsetY: 5,
+                showTimeout: 100,
+                hideAniDuration: 50
+            });
+
+            $('#btn_login').click(function () {
+                //$('#ipt_account').poshytip('show');
+                $('#form1').ajaxSubmit(function (data) {
+                    //CxcDialog('登录失败',data,'Warning');
+                    //$('#sysname').poshytip('update':'aaaa');
+                    if(data!="1"){
+                        $('#btn_login').poshytip('update', data);
+                        $('#btn_login').poshytip('show');
+                        $('#btn_login').poshytip('hideDelayed', 2000);                       
+                    }
+                    else{
+                        window.location='/main';
+                    }
+
+                    //$('#btn_login').poshytip({'hideDelayed':2000,'hideDelayed':2000});
+
+                });
+                return false;
+            });
+
+        });
+
+
+
+    </script>
+</form>
+</body>
+</html>
